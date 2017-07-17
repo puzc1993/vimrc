@@ -114,6 +114,7 @@ call plug#end()
   	        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
   	        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
         "airline
+        "terminal font: Roboto Mono for Powerline Regular 11
             let g:airline#extensions#tabline#buffer_idx_mode = 1
             let g:airline#extensions#tabline#enabled = 1
             let g:airline_powerline_fonts = 1
