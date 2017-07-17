@@ -11,6 +11,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 	" Some useful settings
@@ -29,11 +31,13 @@ call plug#end()
 	set cursorline       "hilight the line that the cursor exists in
 	set cursorcolumn     "hilight the column that the cursor exists in
 	set nowrap           "no line wrapping
+	let g:gruvbox_italic=1
 	colorscheme gruvbox  "use the theme gruvbox
 	set background=dark "use the light version of gruvbox
 	" change the color of chars over the width of 80 into blue (uncomment to enable this)
 	"au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
 	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+	let g:gruvbox_contrast_dark='soft'
 
 	" Fundamental settings
 	set fileencoding=utf-8
@@ -52,6 +56,25 @@ call plug#end()
 	nmap <F2> :NumbersOnOff<CR>
 
 	nmap t<Enter> :rightbelow sp term://zsh\|resize 15<CR>i
+
+    " use t{h,j,k,l} to switch between different windows
+    noremap tk <c-w>k
+    noremap tj <c-w>j
+    noremap th <c-w>h
+    noremap tl <c-w>l
+    " t[number] => switch to the file showed in the top tabs
+    " t[ t] => prev tab/next tab
+    nmap t1 <Plug>AirlineSelectTab1
+    nmap t2 <Plug>AirlineSelectTab2
+    nmap t3 <Plug>AirlineSelectTab3
+    nmap t4 <Plug>AirlineSelectTab4
+    nmap t5 <Plug>AirlineSelectTab5
+    nmap t6 <Plug>AirlineSelectTab6
+    nmap t7 <Plug>AirlineSelectTab7
+    nmap t8 <Plug>AirlineSelectTab8
+    nmap t9 <Plug>AirlineSelectTab9
+    nmap t[ <Plug>AirlineSelectPrevTab
+    nmap t] <Plug>AirlineSelectNextTab
 
 	" NERDTress File highlighting
 	function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -90,3 +113,10 @@ call plug#end()
   	        noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
   	        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
   	        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+        "airline
+            let g:airline#extensions#tabline#buffer_idx_mode = 1
+            let g:airline#extensions#tabline#enabled = 1
+            let g:airline_powerline_fonts = 1
+            if !exists('g:airline_symbols')
+                let g:airline_symbols = {}
+            endif
