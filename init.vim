@@ -61,23 +61,20 @@ nmap <F2> :NumbersOnOff<CR>
 nmap t<Enter> :rightbelow sp term://zsh\|resize 15<CR>i
 
 " use t{h,j,k,l} to switch between different windows
-noremap tk <c-w>k
-noremap tj <c-w>j
-noremap th <c-w>h
-noremap tl <c-w>l
-" t[number] => switch to the file showed in the top tabs
-" t[ t] => prev tab/next tab
-nmap t1 <Plug>AirlineSelectTab1
-nmap t2 <Plug>AirlineSelectTab2
-nmap t3 <Plug>AirlineSelectTab3
-nmap t4 <Plug>AirlineSelectTab4
-nmap t5 <Plug>AirlineSelectTab5
-nmap t6 <Plug>AirlineSelectTab6
-nmap t7 <Plug>AirlineSelectTab7
-nmap t8 <Plug>AirlineSelectTab8
-nmap t9 <Plug>AirlineSelectTab9
-nmap t[ <Plug>AirlineSelectPrevTab
-nmap t] <Plug>AirlineSelectNextTab
+"noremap tk <c-w>k
+"noremap tj <c-w>j
+"noremap th <c-w>h
+"noremap tl <c-w>l
+" ctrl+w[number] => switch to the file showed in the top tabs
+nmap <C-W>1 <Plug>AirlineSelectTab1
+nmap <C-W>2 <Plug>AirlineSelectTab2
+nmap <C-W>3 <Plug>AirlineSelectTab3
+nmap <C-W>4 <Plug>AirlineSelectTab4
+nmap <C-W>5 <Plug>AirlineSelectTab5
+nmap <C-W>6 <Plug>AirlineSelectTab6
+nmap <C-W>7 <Plug>AirlineSelectTab7
+nmap <C-W>8 <Plug>AirlineSelectTab8
+nmap <C-W>9 <Plug>AirlineSelectTab9
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
